@@ -8,7 +8,7 @@
   
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-  Score
+  <!-- Score
   Rules
 
   You Picked
@@ -17,12 +17,56 @@
   You Win
   You Lose
 
-  Play Again
+  Play Again -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
 
+  <script type="text/javascript" src="javaScript.js"></script>
 </head>
 <body>
   <div class="container">
-
+    <header>
+      <div class="logo">
+        <img src="images/logo.svg" id='logo' alt="">
+      </div>
+      <div class="score">
+        <div class="score-title-value-container">
+          <p class="score-title">SCORE</p>
+          <p class="score-value">12</p> 
+        </div>
+      </div>
+    </header>
+    <section class="game-container">
+        <div id="choosing-screen">
+          <div class="triange-section">
+            <div class="symbol-container tp-l">
+              <div class="game-symbol-outline game-symbol-flex paper-out">
+                  <div class="game-symbol-container game-symbol-flex">
+                  <img src="images/icon-paper.svg" class="symbol-svg" alt="">
+                </div>
+              </div>
+            </div>
+            
+            <div class="symbol-container tp-r">
+              <div class="game-symbol-outline game-symbol-flex rock-out">
+                  <div class="game-symbol-container game-symbol-flex ">
+                  <img src="images/icon-rock.svg" class="symbol-svg" alt="">
+                </div>
+              </div>
+            </div>
+            
+            <div class="symbol-container bt-m">
+              <div class="game-symbol-outline game-symbol-flex scissor-out">
+                  <div class="game-symbol-container game-symbol-flex">
+                  <img src="images/icon-scissors.svg" class="symbol-svg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
   </div>
 
   
