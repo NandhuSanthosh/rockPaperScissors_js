@@ -170,7 +170,7 @@ header{
 
 
 .winner_shadow{
-    animation: shadowAnimation 3s linear infinite;
+    animation: shadowAnimation 3s alternate infinite;
 }
 
 @keyframes shadowAnimation {
@@ -209,6 +209,33 @@ header{
         0px 0px 0px 28px rgba(255, 255, 255, 0.046),
         0px 0px 0px 18px rgba(255, 255, 255, 0.046)
     }
+}
+
+/* RESULT */
+.result-printer{
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* justify-content: center; */
+}
+
+.result-printer span{
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.result-printer button{
+    background: whitesmoke;
+    color: var(--dark-txt);
+    border: none;
+    padding: .4rem 1.8rem ;
+    border-radius: .5rem;
+    font-size: .7rem;
+    letter-spacing: 1px;
 }
 
 /* RULES BUTTOM */

@@ -32,6 +32,11 @@ rules_content = `<div class="rules-tab">
  </div>
 </div>`
 
+next_game_container = `<div class="result-printer">
+<span id='result'>YOU LOSE</span>
+<button id="play-again">PLAY AGAIN</button>
+</div>`
+
 your_score= 0
 com_score = 0
 
@@ -50,6 +55,18 @@ symbols = [{
 score_container = document.getElementById('score-value')
 rules_button = document.getElementById('rules-button')
 rules_tab = document.getElementById('rules-tab')
+triangle_section = document.getElementById('triangle-section')
+result_printing_container = null
+winner_address = null
+
+
+container = document.createElement('div')
+container.innerHTML = next_game_container
+triangle_section.appendChild(container)
+play_btn = document.getElementById('play-again')
+play_btn.addEventListener('click', nxt_game)
+result_printing_container = container
+
 one = document.getElementById('holder-one')
 two = document.getElementById('holder-two')
 three = document.getElementById('holder-three')
@@ -113,22 +130,29 @@ function score_updater(computer_choice, selection) {
         winner = 0
     }else if( computer_choice != selection){
         winner = 1
-    }
-    else{
-        winner = -1
         com_score += 1;
     }
-    score_container.innerHTML = your_score 
+    else {
+        winner = -1
+    }
+    score_write()
     return winner
+}
+
+function score_write() {
+    score_container.innerHTML = your_score 
+    
 }
 
 async function dly(winner){
         await sleep(2000);  
         if (your_score == 10){
             result_printer('YOU WIN')
+            winner_address= winner
         }
         else if(com_score == 10){
             result_printer('YOU LOSE')
+            winner_address= winner
         }
         else{
             strater()
@@ -137,6 +161,8 @@ async function dly(winner){
 }
 
 function result_printer(string){
+    result_printing_container.style.display = 'flex'
+    document.getElementById('result').innerHTML = string;
 
 }
 
@@ -165,14 +191,16 @@ function sleep(ms) {
 }
 
 
-
-
 function strater(){
     holders[2]['position'].style.display = 'flex'
     holders.forEach((item, index) =>{
         item['position'].innerHTML = symbols[index]['code']
         item['content']= symbols[index]['id']
     })
+
+    
+    result_printing_container.style.display='none'
+
 }
 function rules_display(){
     rules_tab.style.display='block'
@@ -180,6 +208,14 @@ function rules_display(){
 }
 function rules_hidder() {
     rules_tab.style.display='none'
+}
+
+function nxt_game(){
+    your_score = 0;
+    com_score = 0;
+    score_write()
+    strater()
+    animation_remover(winner_address)
 }
 
 rules_button.addEventListener('click', rules_display)
