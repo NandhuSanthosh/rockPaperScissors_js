@@ -214,7 +214,7 @@ header{
 /* RESULT */
 .result-printer{
     position: absolute;
-    bottom: -20px;
+    bottom: -10vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -225,7 +225,7 @@ header{
 
 .result-printer span{
     color: white;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 600;
 }
 .result-printer button{
