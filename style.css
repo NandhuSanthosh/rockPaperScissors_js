@@ -31,16 +31,23 @@
     display: flex;
     flex-direction: column;
 }
+.header-container{
+    display: flex;
+    justify-content: center;
+}
 
 header{
     border: 3px solid var(--hdr-bdr);
-    width: 100%;
+    width: min(50rem, 100%);
     border-radius: .4rem;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+    
 }
 
+
+ 
 .score{
     background-color: rgb(223, 223, 223);
     width: 4.5rem;
@@ -61,6 +68,8 @@ header{
     font-size: 2rem;
     color: rgb(81, 81, 81);
 }
+
+
 .game-container{
     flex: 1;
     padding-top: 7rem;
@@ -90,6 +99,8 @@ header{
     height: calc(0.866 * var(--width) );
     /* ½(√3a) */
 }
+
+
 /* SYMBOL STYLING */
 .symbol-container{
     position:absolute;
@@ -118,13 +129,14 @@ header{
 }
 
 .game-symbol-container{
-    --diameter: 4.5rem;
     background-color: white;
     width: var(--diameter);
     height: var(--diameter);
     box-shadow: 0px 3px 0px 0px rgba(146, 146, 146, 0.75) inset;
 
 }
+
+
 .tp-r{
     right: calc(var(--diameter) / 2 * -1);
     top: calc(var(--diameter) / 2 * -1);
@@ -265,6 +277,10 @@ header{
     background-position: center;
     background-repeat: no-repeat;
 }
+@media only screen and (min-width: 1366px){
+    
+
+}
 .rules-title{
     margin-top: 3rem;
 }
@@ -274,4 +290,26 @@ header{
     font-weight: 700; 
     padding: 20px;
     text-align: center;
+}
+
+@media only screen and (min-width: 1366px){
+    :root{
+        --diameter: 6.5rem;
+    }
+    .score-title{
+        font-size: .6rem;
+    }
+    .score-value{
+        font-size: 2.2rem;
+    }
+    .triange-section{
+        --width: 18vw;
+    }
+    .rules-tab{
+        top: 15vh;
+        bottom: 15vh;
+        left: 35vw;
+        right: 35vw;
+    }
+    
 }
