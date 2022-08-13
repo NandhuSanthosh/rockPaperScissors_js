@@ -95,12 +95,17 @@ header{
     position:absolute;
 }
 .selection-details{
-    margin-top: 20px;
+    position: absolute;
     text-align: center;
     color: white;
     font-size: .7rem;
     letter-spacing: 1px;
+
+    left: 20%;
+    bottom: -30px;
+
 }
+
 .game-symbol-flex{
     border-radius: 50%; 
     display: flex;
@@ -151,4 +156,95 @@ header{
 .scissor-out{
     box-shadow: 0px -4px 0px 0px hsla(40, 100%, 27%, 0.678) inset;
     background-color: var(--scissors-clr);
+}
+/* WINNER SHADOW */
+/* .winner_shadow {
+    box-shadow: 0px 0px 0px 18px rgba(255, 255, 255, 0.046);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+.winner_shadow:hover {
+        box-shadow: 0px 0px 0px 70px rgba(255, 255, 255, 0.046)
+} */
+
+
+
+.winner_shadow{
+    animation: shadowAnimation 3s linear infinite;
+}
+
+@keyframes shadowAnimation {
+    0%{
+       box-shadow: 0px 0px 0px 18px rgba(255, 255, 255, 0.046)
+    }
+    20%{
+       box-shadow: 0px 0px 0px 28px rgba(255, 255, 255, 0.046),
+       0px 0px 0px 18px rgba(255, 255, 255, 0.046),
+
+    }
+    40%{
+        box-shadow: 0px 0px 0px 38px rgba(255, 255, 255, 0.046),
+       0px 0px 0px 28px rgba(255, 255, 255, 0.046),
+       0px 0px 0px 18px rgba(255, 255, 255, 0.046)
+
+    }
+    60%{
+        box-shadow: 0px 0px 0px 48px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 38px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 28px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 18px rgba(255, 255, 255, 0.046),
+    }
+    80%{
+        box-shadow: 0px 0px 0px 58px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 38px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 28px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 18px rgba(255, 255, 255, 0.046),
+    }
+    100%{
+        box-shadow: 0px 0px 0px 68px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 58px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 48px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 38px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 28px rgba(255, 255, 255, 0.046),
+        0px 0px 0px 18px rgba(255, 255, 255, 0.046)
+    }
+}
+
+/* RULES BUTTOM */
+.rules-button-container{
+    display: flex;
+    justify-content: center;
+}
+.rules-button{
+    --color: rgba(255, 255, 255, 0.491);
+    background-color: transparent;
+    color: white;
+    border: 2px solid var(--color);
+    color: var(--color);
+    padding: .5rem 2rem ;
+
+    border-radius: 10px;
+    letter-spacing: 2px;
+    font-size: .7rem;
+}
+.rules-tab{
+    position: absolute;
+
+    inset: 0;
+    background-color: whitesmoke;
+    
+    background-image: url(images/image-rules.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.rules-title{
+    margin-top: 3rem;
+}
+.rules-title-text{
+    color: var(--dark-txt);   
+    font-size: 2rem;
+    font-weight: 700; 
+    padding: 20px;
+    text-align: center;
 }
