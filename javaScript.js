@@ -33,7 +33,7 @@ rules_content = `<div class="rules-tab">
 </div>`
 
 your_score= 0
-com_socre = 0
+com_score = 0
 
 symbols = [{
         'code': paper_symbol, 
@@ -118,7 +118,7 @@ function score_updater(computer_choice, selection) {
         winner = -1
         com_score += 1;
     }
-    score_container.innerHTML = score
+    score_container.innerHTML = your_score 
     return winner
 }
 
