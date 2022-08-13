@@ -94,6 +94,13 @@ header{
 .symbol-container{
     position:absolute;
 }
+.selection-details{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: .7rem;
+    letter-spacing: 1px;
+}
 .game-symbol-flex{
     border-radius: 50%; 
     display: flex;

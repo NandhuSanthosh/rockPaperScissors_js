@@ -1,0 +1,55 @@
+html>
+ 
+<head>
+    <title>
+        How to get the data attributes
+        of an element using JavaScript ?
+    </title>
+</head>
+ 
+<body align="center">
+    <h1 style="color:green;">
+        GeeksforGeeks
+    </h1>
+    <p id="GFG_UP"
+       style="font-size: 15px;
+              font-weight: bold;">
+    </p>
+ 
+  
+    <span data-typeId="123"
+          data-name="name"
+          data-points="10"
+          data-important="true"
+          id="span">This is the Element.
+     
+    <br>
+    <br>
+    <button onclick="GFG_Fun()"> click here </button>
+    <p id="GFG_DOWN"
+       style="font-size: 20px;
+              font-weight: bold;
+              color:green;">
+    </p>
+ 
+ 
+    <script>
+    var el_up = document.getElementById('GFG_UP');
+    var el_down = document.getElementById('GFG_DOWN');
+    var input = document.getElementById('span');
+    el_up.innerHTML = "Click on the button to get "
+        + "the data attributes of element.";
+ 
+    function GFG_Fun() {
+        var jsonData = JSON.stringify({
+            id: parseInt(input.dataset.typeid),
+            points: parseInt(input.dataset.points),
+            important: input.dataset.important,
+            dataName: input.dataset.name
+        });
+        el_down.innerHTML = jsonData;
+    }
+    </script>
+</body>
+ 
+</html>
